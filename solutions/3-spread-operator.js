@@ -1,10 +1,9 @@
 const convert = (...dates) => {
-    return dates.map(date => {
-        const [year, month, day] = date;
-        const jsDate = new Date(year, month - 1, day);
-        jsDate.setUTCHours(0, 0, 0, 0);
-        return jsDate.toDateString();
-    });
-}
+    // BEGIN
+    return dates.map(([year, month, day]) => 
+        new Date(year, month, day).toDateString()
+    );
+    // END
+};
 
 export default convert;
